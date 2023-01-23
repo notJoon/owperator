@@ -2,7 +2,6 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 use crate::parser::*;
-use crate::lexer::*;
 use crate::env::*;
 
 const VALID_MINIMUM_ARGS: usize = 3;
