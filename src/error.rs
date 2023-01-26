@@ -5,12 +5,14 @@ use std::fmt;
 #[derive(Debug)]
 pub enum ParserError {
     UnexpectedParserError,
+    ParenIsNotMatched,
 }
 
 impl fmt::Display for ParserError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
             ParserError::UnexpectedParserError => write!(f, "Unexpected parser error"),
+            ParserError::ParenIsNotMatched => write!(f, "Parentheses pair do not match"),
         }
     }
 }
