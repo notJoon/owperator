@@ -1,24 +1,9 @@
-use crate::lexer::Token;
-use std::error::Error;
+use crate::{lexer::Token, error::ParserError};
 use std::fmt;
 
 use crate::lexer::tokenizer;
 
-#[derive(Debug)]
-pub enum ParserError {
-    UnexpectedParserError,
-}
-
-impl fmt::Display for ParserError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            ParserError::UnexpectedParserError => write!(f, "Unexpected parser error"),
-        }
-    }
-}
-
-impl Error for ParserError {}
-
+#[allow(dead_code)]
 #[derive(Debug, Clone, PartialEq)]
 pub enum Object {
     Void,

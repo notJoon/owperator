@@ -1,6 +1,7 @@
 use core::fmt;
 use std::error::Error;
 
+#[allow(dead_code)]
 #[derive(Debug, Clone, PartialEq)]
 pub enum Token {
     Number(i64),

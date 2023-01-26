@@ -1,8 +1,11 @@
+#![allow(dead_code)]
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
 use crate::parser::*;
 use crate::env::*;
+use crate::error::*;
 
 const VALID_MINIMUM_ARGS: usize = 3;
 const VALID_MINIMUM_COND_ARGS: usize = 4;
@@ -173,7 +176,7 @@ fn eval_obj(obj: &Object, env: &mut Rc<RefCell<Environment>>) -> EvalResult {
     }
 }
 
-fn eval(program: &str, env: &mut Rc<RefCell<Environment>>) -> EvalResult {
+pub fn eval(program: &str, env: &mut Rc<RefCell<Environment>>) -> EvalResult {
     let parsed = parse(program);
 
     if parsed.is_err() {
